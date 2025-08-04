@@ -1,11 +1,15 @@
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+
 function App() {
   return (
-    <div className="App">
-      <header className="bg-gray-100 text-center p-6">
-        <h1>Welcome to AI Career and Degree Guidance</h1>
-        <p>Your journey starts here!</p>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+    </Routes>
   );
 }
 
