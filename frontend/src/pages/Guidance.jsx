@@ -1,10 +1,12 @@
 import { useState } from "react";
 import AcademicBackground from "../components/AcademicBackground";
 import Interests from "../components/Interests";
+import Certifications from "../components/Certifications";
 const Guidance = () => {
   const [questionNo, setQuestionNo] = useState(0);
   const [selectedInterests, setSelectedInterests] = useState([]);
   const [jobPreferences, setJobPreferences] = useState([]);
+  const [certifications, setCertifications] = useState("");
   const [form, setForm] = useState({
     degree: "",
     initialSubjects: "",
@@ -32,6 +34,12 @@ const Guidance = () => {
             setSelectedInterests={setSelectedInterests}
             jobPreferences={jobPreferences}
             setJobPreferences={setJobPreferences}
+          />
+        )}
+        {questionNo === 2 && (
+          <Certifications
+            certifications={certifications}
+            setCertifications={setCertifications}
           />
         )}
         <div className="flex items-center justify-center mt-6 gap-36">
